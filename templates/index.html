@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+     
+  <h1>
+    <span class="title-icon">🔐</span>
+    <span class="title-text">Password Generator</span>
+  </h1>
+
+
+    <div class="controls">
+      <label><input type="checkbox" id="lower" checked> a-z (Lowercase)</label>
+      <label><input type="checkbox" id="upper" checked> A-Z (Uppercase)</label>
+      <label><input type="checkbox" id="digits" checked> 0-9 (Numbers)</label>
+      <label><input type="checkbox" id="symbols" checked> Symbols (!@#$...)</label>
+
+      <div class="length-control">
+        <label>Password Length: <span id="len-value">16</span></label>
+        <input type="range" id="len" min="4" max="64" value="16" step="1">
+      </div>
+
+      <div class="btn-row">
+        <button id="generate">Generate</button>
+        <button id="copy">Copy</button>
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="output">
+      <input id="out" readonly placeholder="Your password will appear here">
+    </div>
+  </div>
+
+  <!-- load script last -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
